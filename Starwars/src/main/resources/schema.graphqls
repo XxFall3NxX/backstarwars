@@ -1,0 +1,22 @@
+type Film {
+  title: String
+}
+
+type Vehicle {
+  name: String
+}
+
+type CharacterSearchDTO {
+  name: String
+  films: [String]
+  vehicles: [String]
+}
+
+type Query {
+  searchCharacter(name: String!): CharacterSearchDTO
+  getSavedSearches: [CharacterSearchDTO]
+}
+
+type Mutation {
+  saveSearch(name: String!, films: [String!], vehicles: [String!]): CharacterSearchDTO
+}
